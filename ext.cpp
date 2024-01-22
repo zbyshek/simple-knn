@@ -14,4 +14,6 @@
 
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
   m.def("distCUDA2", &distCUDA2);
+  m.def("distIndex2", &distCudaIndices2);
+  m.def("distIndexQ", &distCudaIndicesQ);
 }

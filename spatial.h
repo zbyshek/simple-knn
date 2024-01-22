@@ -12,3 +12,5 @@
 #include <torch/extension.h>
 
 torch::Tensor distCUDA2(const torch::Tensor& points);
+std::vector<torch::Tensor> distCudaIndices2(const torch::Tensor& points, int K);
+std::vector<torch::Tensor> distCudaIndicesQ(const torch::Tensor& points, const torch::Tensor& q_indices, const torch::Tensor& n_indices, int K);
