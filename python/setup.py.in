@@ -1,0 +1,28 @@
+""" Setup script for the '@PROJECT@' python bindings. """
+import sysconfig
+
+from setuptools import setup
+from setuptools.dist import Distribution
+
+
+class BinaryDistribution(Distribution):
+    """This class is needed to create OS-specific wheels."""
+
+    def has_ext_modules(self):
+        """Return True since we have C++ extensions."""
+        return True
+
+
+setup(
+    name='@PROJECT@',
+    version='@VERSION@',
+    author='@AUTHOR@',
+    description='Python bindings for the "@PROJECT@"',
+    packages=['@PROJECT@'],
+    package_data={'@PROJECT@': ['*.pyd', '*.so']},
+    include_package_data=True,
+    python_requires=f'>={sysconfig.get_python_version()}',
+    platforms=[sysconfig.get_platform()],
+    distclass=BinaryDistribution,
+    zip_safe=False,
+)

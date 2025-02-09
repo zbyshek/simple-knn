@@ -1,0 +1,9 @@
+venv/
+build/
+simple_knn_C.egg-info/
+dist/
+pkg/
+release/
+*.so
+**__pycache__**
+*.pyc

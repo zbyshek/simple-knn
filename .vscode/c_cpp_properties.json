@@ -1,0 +1,35 @@
+{
+    "env": {
+    "PYTHON_INCL_DIR_WINDOWS": "C:/Python/39/include",
+    "PYTHON_INCL_DIR_LINUX": "/usr/include/python3.10"
+    },
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/venv/Lib/site-packages/torch/include",
+                "${workspaceFolder}/venv/Lib/site-packages/torch/include/torch/csrc/api/include",
+                "${workspaceFolder}/venv/Include",
+                "${env:PYTHON_INCL_DIR_LINUX}"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "${default}"
+        },
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/venv/Lib/site-packages/torch/include",
+                "${workspaceFolder}/venv/Lib/site-packages/torch/include/torch/csrc/api/include",
+                "${workspaceFolder}/venv/Include",
+                "${env:PYTHON_INCL_DIR_WINDOWS}"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

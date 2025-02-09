@@ -3,15 +3,17 @@
 # GRAPHDECO research group, https://team.inria.fr/graphdeco
 # All rights reserved.
 #
-# This software is free for non-commercial, research and evaluation use 
+# This software is free for non-commercial, research and evaluation use
 # under the terms of the LICENSE.md file.
 #
 # For inquiries contact  george.drettakis@inria.fr
 #
 
+import os
 from setuptools import setup
 from torch.utils.cpp_extension import CUDAExtension, BuildExtension
-import os
+
+os.environ["DISTUTILS_USE_SDK"] = "1"
 
 cxx_compiler_flags = []
 
@@ -22,11 +24,11 @@ setup(
     name="simple_knn",
     ext_modules=[
         CUDAExtension(
-            name="simple_knn._C",
+            name="simple_knn.simple_knn_C",
             sources=[
-            "spatial.cu", 
-            "simple_knn.cu",
-            "ext.cpp"],
+            "src/spatial.cu",
+            "src/simple_knn.cu",
+            "src/ext.cpp"],
             extra_compile_args={"nvcc": [], "cxx": cxx_compiler_flags})
         ],
     cmdclass={
